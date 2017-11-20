@@ -1,0 +1,36 @@
+﻿@model DDAC_Flight_System.Models.ViewModel
+
+@{ 
+    var flights = (List<Flight>) Model.getFlights();
+}
+
+<h2>Booking Flight Panel</h2>
+
+<div class="container body-content>">
+    <div class="main-content">
+        <table style="width:80%;">
+            <tr>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>Price</th>
+                <th>Booking</th>
+            </tr>
+            @foreach (var item in flights as List<Flight>) { 
+                <tr>
+                    <td>@item.origin</td>
+                    <td>@item.destination</td>
+                    <td>@item.departureTime</td>
+                    <td>@item.arrivalTime</td>
+                    <td>RM @item.price</td>
+                    <td><a asp-controller="BookFlight" asp-action="BookFlight" asp-route-id="@item.ID">booking</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<a asp-controller="Main" asp-action="Index">
+    Back to Home Page
+</a>

@@ -1,0 +1,33 @@
+﻿@model DDAC_Flight_System.Models.ViewModel
+
+@{
+    var reservations = (List<Reservation>)Model.getReservations();
+}
+
+
+<h2>Booking Flight Panel</h2>
+
+<div class="container body-content>">
+    <div class="main-content">
+        <table style="width:80%;">
+            <tr>
+                <th>Reservation ID</th>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>Booking Class</th>
+                <th>Class Price</th>
+                <th>Flight Price</th>
+                <th>Total Price</th>
+            </tr>
+            
+        </table>
+    </div>
+</div>
+
+<a asp-controller="Main" asp-action="Index">
+    Back to Home Page
+</a>

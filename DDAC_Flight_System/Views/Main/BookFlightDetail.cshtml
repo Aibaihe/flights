@@ -1,0 +1,26 @@
+﻿@model DDAC_Flight_System.Models.ViewModel
+
+@{
+    var flight = Model.getFlight();
+    var classes = Model.getClasses();
+}
+
+<h2>Booking Flight Detail</h2>
+
+<div class="container body-content>">
+    <div class="main-content">
+    @using (Html.BeginForm("BookFlightDetail", "BookFlight", FormMethod.Post))
+    {   
+        <table>
+            <tr>
+                <td>Travel Classes</td>
+                <td>@Html.DropDownListFor(m => m._context.TravelClasses, new SelectList(classes, "ID", "ClassDescription"))</td>
+            </tr>
+        </table>
+        <br />
+        <input type="submit" value="Booking" />
+    }
+    </div>
+    
+</div>
+        

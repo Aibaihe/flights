@@ -1,0 +1,49 @@
+﻿@model DDAC_Flight_System.Models.CheckCustomer
+
+<div class="container body-content">
+    <h2>Sign Up</h2>
+    @using (Html.BeginForm("SignUp", "SignUp", FormMethod.Post))
+    {
+    <table style="width:50%;">
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                @Html.TextBoxFor(c => c.Email) @Html.ValidationMessageFor(model => model.Email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                @Html.TextBoxFor(c => c.Name) @Html.ValidationMessageFor(model => model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password
+            </td>
+            <td>
+                @Html.PasswordFor(c => c.Password) @Html.ValidationMessageFor(model => model.Password)
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Re-password
+            </td>
+            <td>
+                @Html.PasswordFor(c => c.RePassword) @Html.ValidationMessageFor(model => model.RePassword)
+
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Register"/>
+    }
+    <br>
+    <a asp-controller="Login" asp-action="Index">
+        Login Page
+    </a>
+</div>
